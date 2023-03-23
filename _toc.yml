@@ -5,9 +5,8 @@ chapters:
 - file: about/index
 - file: 101/index
   sections:
-  - file: 101/WhatWhy
-  - file: 101/ReadWrite
-  - file: 101/FirstSteps
+  - file: 101/00_grid_rechunk
+  - file: 101/01_file_inspection
 - file: back/index
   sections:
   - file: back/Glossary

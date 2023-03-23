@@ -34,12 +34,12 @@ parse:
     - smartquotes
     - substitution
 
-sphinx:
+sphinx:   
   recursive_update: true
-  extra_extensions:  ['sphinxcontrib.bibtex']
+  # extra_extensions:  ['sphinxcontrib.bibtex']
   config:
-    bibtex_reference_style: author_year
-    bibtex_bibfiles: ['references.bib']
-    html_extra_path: ['env.yml']
+    # bibtex_reference_style: author_year
+    # bibtex_bibfiles: ['references.bib']
+    html_extra_path: ['env.yml', 'requirements.txt']
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
