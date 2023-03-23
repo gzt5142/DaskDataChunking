@@ -1,0 +1,26 @@
+.vscode
+*.log
+
+# scratch notebook in which to conduct experiments. Prevents accidentally
+# committing to the public repo. 
+scratch.ipynb
+
+# The built book -- never check into the repo.
+_build
+
+
+
+# IPython & Jupyter
+profile_default/
+ipython_config.py
+.ipynb_checkpoints
+
+## MISC: 
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

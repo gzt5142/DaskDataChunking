@@ -1,9 +1,14 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: index
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: about/index
+- file: 101/index
+  sections:
+  - file: 101/WhatWhy
+  - file: 101/ReadWrite
+  - file: 101/FirstSteps
+- file: back/index
+  sections:
+  - file: back/Glossary
+  - file: back/Appendix_A
