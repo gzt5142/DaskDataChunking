@@ -39,7 +39,7 @@ current `pangeofu` environment will be able to build jupyterbooks without proble
 of the workflows documented in the component notebooks may not work until we get that sorted
 out.
 
-## Make Your Notebook
+## Write Your Notebook
 
 Build your workflow in a notebook and save it in an appropriate location.  Doesn't really matter
 where it is -- I started a rough outline based on the old 'college numbering' system (101 is a
@@ -177,7 +177,12 @@ compiled book content. (It's not papermill, but it's similar.)
 * Run `jb build .` to build the book.
 
 This will create a `_build` directory that contains the compiled book content as well
-as the jupyterbook cache. More on that in a minute.
+as the jupyterbook cache.
+
+I have configured the builder to use a cache.  That cache lives in the `_build` folder. 
+It will only run notebooks for which it does not have already cached output.  A notebook
+with a newer timestamp that that in the cache is also re-run. To force **all** notebooks
+to run (ignoring the cache), run `jb build --all .` 
 
 The `jb` command is an alias to `jupyter-book`.  Use whichever you prefer.  Pass a `--help`
 to see the available options and arguments available. Mostly, the behavior is controlled
