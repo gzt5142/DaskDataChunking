@@ -102,7 +102,7 @@ file automatically (e.g. `.md` or `.ipynb`).
 A couple of useful tips for using `doc` directives:
 
 * The document you are pointing to must be known to the indexer -- which means that it
-  *must* appear in the _toc.yml file.
+  *must* appear in the `_toc.yml` file.
 * It is possible to use relative path names by leaving off that leading slash.
 
 ### Sidebars and Margin Notes
@@ -152,7 +152,7 @@ have them render.
 
 I have configured the builder to ignore any document not explicitly listed in the
 `_toc.yml` file. You must add your notebook to the table of contents for it to be
-included in the notebook, and also for other documents to be able to reference it
+included in the compiled/rendered output, and also for other documents to be able to reference it
 using `doc` directives.
 
 The format of the `_toc.yml` file is described in the jupyter-book documentation
