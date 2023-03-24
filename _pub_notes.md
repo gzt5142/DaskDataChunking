@@ -32,21 +32,19 @@ jupyter-book to work are:
 Those last two items are needed to get the `jupyter-book` build to work, although they are
 not declared as dependencies explicitly.
 
-**NOTE** -- I built on top of `pangeofu` for the initial environment (March 2021).  There are
-some known problems that we're still debugging relative to versioning of some packages in
-that environment. I hope to have a more stable environment based on older packages soon. The
-current `pangeofu` environment will be able to build jupyterbooks without problems, but some
-of the workflows documented in the component notebooks may not work until we get that sorted
-out.
+**NOTE** -- I added jupyter book to two different environments: `pangeofu` and also the 
+"standard" `pangeo`. These environments differ with respect to versions of a couple of 
+key libraries (zarr, fsspec). They both will work the same with respect to the jupyterbook 
+build process. 
 
 ## Write Your Notebook
 
 Build your workflow in a notebook and save it in an appropriate location.  Doesn't really matter
-where it is -- I started a rough outline based on the old 'college numbering' system (101 is a
+where it is, so long as it is in this repo -- I started a rough outline based on the old 'college numbering' system (101 is a
 freshman level course, 201 is sophomore, etc). But that can easily change as you grow the
 book project.
 
-The notebook should be able to run all cells without interaction. Clear all outputs, reset the
+The finished notebook should be able to run all cells without interaction. Clear all outputs, reset the
 kernel, then "run all". That verifies that it will run -- but it **does not build the book content.**
 That comes later.
 
@@ -57,7 +55,10 @@ metadata to control what gets shown in the rendered output.  Here are some that 
 * `hide-input` -- The code cell is 'hidden' behind a dropdown.  The user can 'click to
     see more' to reveal the code cell contents.  Code outputs always show.
 * `remove-input` -- The code cell is not shown at all.  The user can't see the code, but
-    the outputs are shown.
+    the outputs are shown.  I've included an example of this in an early cell in the
+    `00_file_inspection.ipynb` notebook.  The code cell printing library versions has
+    been tagged such that the book does not include the code cell, but the ouptut of 
+    that cell's execution is included. 
 * `remove-cell` -- Does not show the code cell or its outputs. **BUT THE CODE IS EXECUTED.**
     I like this for cells that are used to set up the environment, but don't need to be
     shown in the rendered output. Those cells won't show in the book, but if the user
@@ -138,6 +139,8 @@ the main content text flows around it.
 I have found that sidebars do not lay out consistently in the browsers I've tested. I
 almost always prefer the effect of `margin` over `sidebar`.
 
+See the `back/Appendix_A.ipynb` notebook to see some of these tags in action. 
+
 ### Math
 
 I don't think it will be relevant for this project -- but you can (if you like) include
@@ -211,13 +214,16 @@ like this:
 It will *show* you "users-users-pangeofu" as the kernel name, but the actual conda
 environment it will activate is named something else. If you were to `conda env list`,
 you would see that an environment with name `conda-env-users-users-pangeofu-py` does
-not exist -- so jupyter-book will **FAIL** (kernelspec not found, or similar).
+not exist -- so jupyter-book will **FAIL** ("kernelspec not found", or similar).
 
-There are two solutions:
+There are a few workarounds:
 
-* Use the `vscode` interface on `nebari`.  It will set the `kernelspec` to the correct
-  environment name.  I do not know why this is the case, but it is.  Save the notebook
-  out of the `vscode` interface, and your jupyterbook runs will work.
+* Use the `vscode` interface on `nebari`.  It will set the `kernelspec` to a generic
+  'python'.  I do not know why this is the case, but it is.  Save the notebook
+  out of the `vscode` interface, and your jupyterbook runs will work, so long as
+  the `pangeo` or `pangeofu` conda environments are currently active when `jb build` is run.
+* Use the jupyterlab interface to set "no kernel" or "ipython". I have had mixed 
+  success with this. It usually works, but not always. 
 * Use `vi` to manually edit the notebook JSON.  Completely remove the `kernelspec` entry
   from the notebook metadata.
 

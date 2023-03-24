@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Dask Data Chunking
-author: Author
+author: Author_Name
 copyright: "2023"
 # logo: logo.png
 
@@ -21,8 +21,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  use_search_button: false
-  announcement: "This is a work in progress..."
+  announcement: "⚠️ This is a work in progress. ⚠️"
 
 parse:
   myst_enable_extensions:
@@ -36,10 +35,13 @@ parse:
 
 sphinx:   
   recursive_update: true
-  # extra_extensions:  ['sphinxcontrib.bibtex']
+  # Disabling bibtex unless we need it. 
+  # extra_extensions:  ['sphinxcontrib.bibtex'] 
   config:
     # bibtex_reference_style: author_year
     # bibtex_bibfiles: ['references.bib']
+    # unknown_mime_type - application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
+    suppress_warnings: ["mystnb.unknown_mime_type"]
     html_extra_path: ['env.yml', 'requirements.txt']
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
