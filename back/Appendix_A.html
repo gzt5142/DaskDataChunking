@@ -353,6 +353,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tags">Example Tags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-markdown">Extended Markdown</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#admonitions">Admonitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#margins">Margins</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -376,7 +381,7 @@ document.write(`
 </div>
 <section id="example-tags">
 <h2>Example Tags<a class="headerlink" href="#example-tags" title="Permalink to this headline">#</a></h2>
-<p>This cell is tagged <code class="docutils literal notranslate"><span class="pre">remove-input</span></code>:</p>
+<p>The following cell is tagged <code class="docutils literal notranslate"><span class="pre">remove-input</span></code>:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python :  3.10.9 | packaged by conda-forge | (main, Feb  2 2023, 20:20:04) [GCC 11.3.0]
@@ -385,8 +390,8 @@ numpy  :  1.23.5
 </div>
 </div>
 </div>
-<p>The code cell is not included, yet its output is.</p>
-<p>This cell is tagged <code class="docutils literal notranslate"><span class="pre">hide-input</span></code>:</p>
+<p>Did you see that cell?  or just its output?   A code cell with <code class="docutils literal notranslate"><span class="pre">remove-input</span></code> will not show in the complied book, yet its output is shown.</p>
+<p>The following cell is tagged <code class="docutils literal notranslate"><span class="pre">hide-input</span></code>:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -407,21 +412,34 @@ numpy  :  1.23.5
 </div>
 </div>
 </div>
+</section>
+<section id="extended-markdown">
+<h2>Extended Markdown<a class="headerlink" href="#extended-markdown" title="Permalink to this headline">#</a></h2>
+<section id="admonitions">
+<h3>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">#</a></h3>
 <p>This markdown cell includes an <code class="docutils literal notranslate"><span class="pre">admonition</span></code> directive.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>This is a ‘see also’ admonition.</p>
+<p>To learn about all of the possible admonition styles, see <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html">https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html</a></p>
 </div>
 <p>These are useful to draw attention to important text. The styling
 sets it apart from the main text flow.</p>
+</section>
+<section id="margins">
+<h3>Margins<a class="headerlink" href="#margins" title="Permalink to this headline">#</a></h3>
 <p>This markdown cell includes a directive to put some text into the margin
 of the rendered output.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>This is an example of text in the margin</p>
+<p><strong>This</strong> is an example of text in the margin</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that margins can contain just about any sort of MyST, including admonitions.</p>
+</div>
 </aside>
-<p>It is useful to display footnote-like text. It can include just about any
-markdown in the text block.</p>
+<p>It is useful to display footnote-like text.</p>
+</section>
 </section>
 </section>
 
@@ -478,6 +496,11 @@ markdown in the text block.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tags">Example Tags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-markdown">Extended Markdown</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#admonitions">Admonitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#margins">Margins</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
