@@ -13,3 +13,6 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```{tableofcontents}
 ```
+
+-----
+Download the environment YAML file [here](env.yml)
