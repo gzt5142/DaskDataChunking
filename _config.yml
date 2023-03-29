@@ -21,7 +21,8 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  announcement: "⚠️ This is a work in progress. ⚠️"
+  home_page_in_navbar: false
+  announcement: "Work in progress..."
 
 parse:
   myst_enable_extensions:
@@ -32,6 +33,7 @@ parse:
     - replacements
     - smartquotes
     - substitution
+    - tasklist
 
 sphinx:   
   recursive_update: true
@@ -40,8 +42,7 @@ sphinx:
   config:
     # bibtex_reference_style: author_year
     # bibtex_bibfiles: ['references.bib']
-    # unknown_mime_type - application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
+    # ignore/suppress warnings for "unknown: mime types: application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
     suppress_warnings: ["mystnb.unknown_mime_type"]
-    html_extra_path: ['env.yml', 'requirements.txt']
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js

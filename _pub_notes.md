@@ -222,16 +222,15 @@ There are a few workarounds:
   'python'.  I do not know why this is the case, but it is.  Save the notebook
   out of the `vscode` interface, and your jupyterbook runs will work, so long as
   the `pangeo` or `pangeofu` conda environments are currently active when `jb build` is run.
-* Use the jupyterlab interface to set "no kernel" or "ipython". I have had mixed 
+* Use the jupyterlab interface to set the kernel to "Python 3 (ipykernel)". I have had mixed 
   success with this. It usually works, but not always. 
 * Use `vi` to manually edit the notebook JSON.  Completely remove the `kernelspec` entry
-  from the notebook metadata.
+  from the notebook metadata. **THIS IS RISKY**
 
 Before I discovered the `vscode` solution, I was manually editing the notebooks -- which
-is not a sustainable way forward. I do most of my notebook development using the jupyterlab
-interface.  Once the notebook will run correctly in jupyterlab, I can use `vscode` to
-tweak the metadata and save the notebook. Not ideal, but better than manually editing
-with `vi`.
+is not a sustainable way forward. The easiest workaround is probably to just reset the
+kernel in the lab interface **once your notebook is done** (you've got all the executable
+bits working). 
 
 -----
 
