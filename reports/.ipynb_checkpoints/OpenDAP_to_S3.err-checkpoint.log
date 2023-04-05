@@ -1,0 +1,101 @@
+Traceback (most recent call last):
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/conda/users/envs/users-pangeofu/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# OUTPUT Location: 
+workspace = f's3://rsignellbucket2/nhgf/prism/'
+
+# OUTPUT Dataset Name:
+FNAME = 'PRISM_v2.zarr'
+
+# Instantiate a fsspec reference to the workspace: 
+fsw = fsspec.filesystem('s3', 
+    anon=False, 
+    default_fill_cache=False, 
+    skip_instance_cache=True, 
+    client_kwargs={ 'endpoint_url': os.environ['AWS_S3_ENDPOINT'] },
+) # this will take credentials from the environment variables, 
+# as defined above. No need to specify profile or keys. The endpoint, 
+# unfortunately is necessary to name explicitly.
+
+outfile = fsw.get_mapper(workspace + FNAME)
+
+for fname in [FNAME]:
+    if fsw.exists(workspace + fname):
+        logging.warning("Removing existing file/folder: %s", fname)
+        fsw.rm(workspace + fname, recursive=True)
+
+print("READY !!")
+
+fsw.ls(workspace)
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[5], line 22[0m
+[1;32m     20[0m     [38;5;28;01mif[39;00m fsw[38;5;241m.[39mexists(workspace [38;5;241m+[39m fname):
+[1;32m     21[0m         logging[38;5;241m.[39mwarning([38;5;124m"[39m[38;5;124mRemoving existing file/folder: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m, fname)
+[0;32m---> 22[0m         [43mfsw[49m[38;5;241;43m.[39;49m[43mrm[49m[43m([49m[43mworkspace[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[43mfname[49m[43m,[49m[43m [49m[43mrecursive[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m
+[1;32m     24[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mREADY !![39m[38;5;124m"[39m)
+[1;32m     26[0m fsw[38;5;241m.[39mls(workspace)
+
+File [0;32m/home/conda/users/ef214d1986de9477d5223419ba4838d76e9839b19e4fb02c9e208c97cab5a61b-20230329-131713-443303-165-pangeofu/lib/python3.10/site-packages/fsspec/asyn.py:115[0m, in [0;36msync_wrapper.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    112[0m [38;5;129m@functools[39m[38;5;241m.[39mwraps(func)
+[1;32m    113[0m [38;5;28;01mdef[39;00m [38;5;21mwrapper[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    114[0m     [38;5;28mself[39m [38;5;241m=[39m obj [38;5;129;01mor[39;00m args[[38;5;241m0[39m]
+[0;32m--> 115[0m     [38;5;28;01mreturn[39;00m [43msync[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mloop[49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/home/conda/users/ef214d1986de9477d5223419ba4838d76e9839b19e4fb02c9e208c97cab5a61b-20230329-131713-443303-165-pangeofu/lib/python3.10/site-packages/fsspec/asyn.py:100[0m, in [0;36msync[0;34m(loop, func, timeout, *args, **kwargs)[0m
+[1;32m     98[0m     [38;5;28;01mraise[39;00m FSTimeoutError [38;5;28;01mfrom[39;00m [38;5;21;01mreturn_result[39;00m
+[1;32m     99[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
+[0;32m--> 100[0m     [38;5;28;01mraise[39;00m return_result
+[1;32m    101[0m [38;5;28;01melse[39;00m:
+[1;32m    102[0m     [38;5;28;01mreturn[39;00m return_result
+
+File [0;32m/home/conda/users/ef214d1986de9477d5223419ba4838d76e9839b19e4fb02c9e208c97cab5a61b-20230329-131713-443303-165-pangeofu/lib/python3.10/site-packages/fsspec/asyn.py:55[0m, in [0;36m_runner[0;34m(event, coro, result, timeout)[0m
+[1;32m     53[0m     coro [38;5;241m=[39m asyncio[38;5;241m.[39mwait_for(coro, timeout[38;5;241m=[39mtimeout)
+[1;32m     54[0m [38;5;28;01mtry[39;00m:
+[0;32m---> 55[0m     result[[38;5;241m0[39m] [38;5;241m=[39m [38;5;28;01mawait[39;00m coro
+[1;32m     56[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+[1;32m     57[0m     result[[38;5;241m0[39m] [38;5;241m=[39m ex
+
+File [0;32m/home/conda/users/ef214d1986de9477d5223419ba4838d76e9839b19e4fb02c9e208c97cab5a61b-20230329-131713-443303-165-pangeofu/lib/python3.10/site-packages/s3fs/core.py:1859[0m, in [0;36mS3FileSystem._rm[0;34m(self, path, recursive, **kwargs)[0m
+[1;32m   1856[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m key [38;5;129;01mand[39;00m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_is_bucket_versioned(bucket):
+[1;32m   1857[0m         [38;5;66;03m# special path to completely remove versioned bucket[39;00m
+[1;32m   1858[0m         [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_rm_versioned_bucket_contents(bucket)
+[0;32m-> 1859[0m paths [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_expand_path(path, recursive[38;5;241m=[39mrecursive)
+[1;32m   1860[0m files [38;5;241m=[39m [p [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39msplit_path(p)[[38;5;241m1[39m]]
+[1;32m   1861[0m dirs [38;5;241m=[39m [p [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m paths [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39msplit_path(p)[[38;5;241m1[39m]]
+
+File [0;32m/home/conda/users/ef214d1986de9477d5223419ba4838d76e9839b19e4fb02c9e208c97cab5a61b-20230329-131713-443303-165-pangeofu/lib/python3.10/site-packages/fsspec/asyn.py:758[0m, in [0;36mAsyncFileSystem._expand_path[0;34m(self, path, recursive, maxdepth)[0m
+[1;32m    755[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mmaxdepth must be at least 1[39m[38;5;124m"[39m)
+[1;32m    757[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(path, [38;5;28mstr[39m):
+[0;32m--> 758[0m     out [38;5;241m=[39m [38;5;28;01mawait[39;00m [38;5;28mself[39m[38;5;241m.[39m_expand_path([path], recursive, maxdepth)
+[1;32m    759[0m [38;5;28;01melse[39;00m:
+[1;32m    760[0m     out [38;5;241m=[39m [38;5;28mset[39m()
+
+File [0;32m/home/conda/users/ef214d1986de9477d5223419ba4838d76e9839b19e4fb02c9e208c97cab5a61b-20230329-131713-443303-165-pangeofu/lib/python3.10/site-packages/fsspec/asyn.py:782[0m, in [0;36mAsyncFileSystem._expand_path[0;34m(self, path, recursive, maxdepth)[0m
+[1;32m    780[0m     maxdepth [38;5;241m=[39m maxdepth [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m maxdepth [38;5;28;01melse[39;00m maxdepth [38;5;241m-[39m [38;5;241m1[39m
+[1;32m    781[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m out:
+[0;32m--> 782[0m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(path)
+[1;32m    783[0m [38;5;28;01mreturn[39;00m [38;5;28mlist[39m([38;5;28msorted[39m(out))
+
+[0;31mFileNotFoundError[0m: ['rsignellbucket2/nhgf/prism/PRISM_v2.zarr']
+FileNotFoundError: ['rsignellbucket2/nhgf/prism/PRISM_v2.zarr']
+
