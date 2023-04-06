@@ -8,9 +8,7 @@ chapters:
   sections:
   - file: 101/00_grid_rechunk
   - file: 101/01_file_inspection
-- file: 201/index
-  sections:
-  - file: 101/Signal_Denoise
+- file: OpenDAP_to_S3
 - file: back/index
   sections:
   - file: back/Glossary
