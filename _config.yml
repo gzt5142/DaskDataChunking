@@ -40,6 +40,7 @@ sphinx:
   # Disabling bibtex unless we need it. 
   # extra_extensions:  ['sphinxcontrib.bibtex'] 
   config:
+    html_extra_path: ['reports']
     # bibtex_reference_style: author_year
     # bibtex_bibfiles: ['references.bib']
     # ignore/suppress warnings for "unknown: mime types: application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
