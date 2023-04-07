@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Dask Data Chunking
-author: Author_Name
+author: HyTEST Team
 copyright: "2023"
-# logo: logo.png
+logo: assets/HyTEST_Badge.svg
 
 exclude_patterns : [_build, Thumbs.db, .nox, .DS_Store, "*.ipynb_checkpoints", "*.zarr", .pytest_cache  ]
 only_build_toc_files: true
@@ -40,7 +40,7 @@ sphinx:
   # Disabling bibtex unless we need it. 
   # extra_extensions:  ['sphinxcontrib.bibtex'] 
   config:
-    html_extra_path: ['reports']
+          # html_extra_path: ["performance_reports"]
     # bibtex_reference_style: author_year
     # bibtex_bibfiles: ['references.bib']
     # ignore/suppress warnings for "unknown: mime types: application/vnd.plotly.v1+json and application/vnd.bokehjs_load.v0+json
