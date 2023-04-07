@@ -15,3 +15,7 @@ Buckle up... we will get up to speed fast.
 
 ```{tableofcontents}
 ```
+
+
+The dask performance report for the total conversion workflow is [here](../performance_reports/OpenDAP_to_S3-perfreport.html)
+
