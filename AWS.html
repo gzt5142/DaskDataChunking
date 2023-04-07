@@ -372,6 +372,11 @@ document.write(`
 <h1>AWS Credentials Helper<a class="headerlink" href="#aws-credentials-helper" title="Permalink to this headline">#</a></h1>
 <p>This notebook helps set AWS credentials based on already-specified
 environment variables for profile and S3 endpoint.</p>
+<p>Before this notebook is called,  you can specify a particular profile and
+endpoint you’d like to use.  Do this by setting the appropriate environment
+variables: <code class="docutils literal notranslate"><span class="pre">AWS_PROFILE</span></code> and <code class="docutils literal notranslate"><span class="pre">AWS_S3_ENDPOINT</span></code>.</p>
+<p>If these environment variables are not set, defaults will be used (as specified
+in the code block below).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -397,6 +402,7 @@ environment variables for profile and S3 endpoint.</p>
 </div>
 </div>
 </div>
+<p>It is extremely important that you <strong>never</strong> set any of the access keys or secrets directly – we never want to include any of those values as string literals in any code.  This code is committed to a public repository, so doing this would essentially publish those secrets.  <strong>ALWAYS</strong> parse the config file as demonstrated above in order to obtain the access key and the secret access key.</p>
 </section>
 
     <script type="text/x-thebe-config">

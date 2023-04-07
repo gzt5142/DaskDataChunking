@@ -367,6 +367,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to Use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why">Why?</a></li>
 </ul>
             </nav>
         </div>
@@ -382,7 +383,7 @@ document.write(`
 <h1>Helper Scripts<a class="headerlink" href="#helper-scripts" title="Permalink to this headline">#</a></h1>
 <p>This is a collection of helpers/demo scripts to show how we like to
 perform common tasks that might be replicated within any notebook
-in this repository:</p>
+in this repository.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utility Functions</a></li>
@@ -394,13 +395,25 @@ in this repository:</p>
 <h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">#</a></h2>
 <p>Supposing that you want to start the dask cluster on the <code class="docutils literal notranslate"><span class="pre">nebari</span></code> cloud
 hosting environment.  You could do that by hand using a dask <code class="docutils literal notranslate"><span class="pre">Gateway()</span></code>,
-or you could just:</p>
+or you could use our boilerplate:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">StartNebariCluster</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
 <p>That cell “magic” will run and load the named notebook within the context
 of the notebook calling it.  It is similar to module loading in python, but
 allows us to document helper operations in their own notebooks.</p>
+<p>This mechanism allows us to start the cluter in exactly the same way every
+time, and with only one line of code in each notebook that needs a cluster.
+See the <a class="reference internal" href="StartNebariCluster.html"><span class="doc">Starting a Cluster on Nebari</span></a> itself to see how you might modify its
+behavior without having to rewrite or replicate it.</p>
+</section>
+<section id="why">
+<h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">#</a></h2>
+<p>This mechanism is similar to a more typical python module import. We like
+the running of external notebooks because it allows us to use jupyter-book
+friendly explanations of each helper and its use.  And it also prevents
+notebooks from having to modify <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> in order to import modules using
+the standard mechanism.</p>
 </section>
 </section>
 
@@ -466,6 +479,7 @@ allows us to document helper operations in their own notebooks.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to Use</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why">Why?</a></li>
 </ul>
   </nav></div>
 

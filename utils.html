@@ -380,22 +380,29 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="utility-functions">
 <h1>Utility Functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">#</a></h1>
+<p>This notebook contains a collection of minor utility functions that can help
+with common tasks in other notebook. To use these helper functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">utils</span><span class="o">.</span><span class="n">ipynb</span>
+</pre></div>
+</div>
+<p>Then you will have access to the functions defined below.  You may call them
+as if they were defined in the notebook which “ran” this notebook.</p>
 <section id="fingerprinting">
 <h2>Fingerprinting<a class="headerlink" href="#fingerprinting" title="Permalink to this headline">#</a></h2>
 <p>The “fingerprint” of the environment shows us the specific versions of key packages
 used in the execution environment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">importlib.metadata</span> <span class="kn">import</span> <span class="n">version</span> <span class="k">as</span> <span class="n">_v</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">version</span> <span class="k">as</span> <span class="n">_sysver</span>
+<span class="kn">from</span> <span class="nn">importlib.metadata</span> <span class="kn">import</span> <span class="n">version</span> <span class="k">as</span> <span class="n">_ver</span>
 
 <span class="k">def</span> <span class="nf">_versions</span><span class="p">(</span><span class="n">mlist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python     :&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python     :&quot;</span><span class="p">,</span> <span class="n">_sysver</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span> 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">mlist</span><span class="p">:</span>
         <span class="n">mlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dask&#39;</span><span class="p">,</span> <span class="s1">&#39;xarray&#39;</span><span class="p">,</span> <span class="s1">&#39;fsspec&#39;</span><span class="p">,</span> <span class="s1">&#39;zarr&#39;</span><span class="p">,</span> <span class="s1">&#39;s3fs&#39;</span> <span class="p">]</span>
     <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mlist</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">_v</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">_ver</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">10s</span><span class="si">}</span><span class="s2"> : --&quot;</span><span class="p">)</span>
 </pre></div>
