@@ -5,10 +5,12 @@ chapters:
 - file: about/index
 - file: 101/index
   sections:
+  - file: 101/WhyChunk
   - file: 101/ExamineSourceData
   - file: 101/EffectSizeShape
   - file: 101/OpenDAP_to_S3
   - file: 101/Compression
+  - file: 101/SecondaryExample
 - file: back/index
   sections:
   - file: helpers.md
