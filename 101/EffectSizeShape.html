@@ -157,10 +157,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About This Project</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Chunking 101</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="WhyChunk.html">Why (re)Chunk Data?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ExamineSourceData.html">Examine Source Data</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Size and Shape of Chunks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenDAP_to_S3.html">Writing OpenDAP Data to ZARR on S3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Compression.html">Assessing Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SecondaryExample.html">Another Example</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../back/index.html">Back Matter</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -418,7 +420,7 @@ xarray     : 2023.3.0
 <h2>Why Chunk<a class="headerlink" href="#why-chunk" title="Permalink to this headline">#</a></h2>
 <p>The simple reason is that the full dataset won’t fit in memory. It has to be
 divided in some way so that only those parts of the data being actively worked
-are loaded.</p>
+are loaded. (See more in <a class="reference internal" href="WhyChunk.html"><span class="doc">Why (re)Chunk Data?</span></a>).</p>
 <p>This has other benefits when it comes to parallel algorithms.  If work can be
 performed in parallel, it is easy to set it up such that a separate worker is
 assigned to each chunk of the data.</p>
