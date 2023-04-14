@@ -371,13 +371,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-chunking">
 <h1>Data Chunking<a class="headerlink" href="#data-chunking" title="Permalink to this headline">#</a></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>“Chunking” large datasets is an essential workflow in the data peparation stage of
+analysis.  Some of the large datasets are written with a chunking pattern which
+is optimized for writing (i.e. how they are created – model outputs, etc), and
+performs poorly for reading.  This depends on the analysis.</p>
+<p>Re-chunking is a useful strategy to re-write the dataset in such a way to optimize
+a particular kind of analysis (i.e. time-series vs spatial).</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about/index.html">About This Project</a></li>
