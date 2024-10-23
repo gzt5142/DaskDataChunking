@@ -2,20 +2,24 @@ format: jb-book
 root: index
 
 chapters:
-- file: about/index
 - file: 101/index
   sections:
   - file: 101/WhyChunk
-  - file: 101/ExamineSourceData
-  - file: 101/EffectSizeShape
-  - file: 101/OpenDAP_to_S3
-  - file: 101/Compression
-  - file: 101/SecondaryExample
+  # - file: 101/ExamineSourceData
+  # - file: 101/EffectSizeShape
+  # - file: 101/ReadWriteChunkedFiles
+  # - file: 101/Compression
+  # - file: 101/Rechunking
+  # - file: 101/OpenDAP_to_S3
+  # - file: 101/SecondaryExample
+- file: 201/index
+  # sections:
+  # - file: 201/TBD
 - file: back/index
   sections:
-  - file: helpers.md
-    sections:
-    - file: utils
-    - file: AWS
-    - file: StartNebariCluster
-  - file: back/Appendix_A  
+  # - file: helpers.md
+    # sections:
+  #   - file: utils
+  #   - file: AWS
+  #   - file: StartNebariCluster
+  - file: back/Glossary  
