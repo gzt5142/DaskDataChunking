@@ -5,9 +5,9 @@ chapters:
 - file: 101/index
   sections:
   - file: 101/WhyChunk
-  # - file: 101/ExamineSourceData
+  - file: 101/ExamineDataChunking
   # - file: 101/EffectSizeShape
-  # - file: 101/ReadWriteChunkedFiles
+  # - file: 101/WriteChunkedFiles
   # - file: 101/Compression
   # - file: 101/Rechunking
   # - file: 101/OpenDAP_to_S3
