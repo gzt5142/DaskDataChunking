@@ -6,7 +6,7 @@ chapters:
   sections:
   - file: 101/WhyChunk
   - file: 101/ExamineDataChunking
-  # - file: 101/EffectSizeShape
+  - file: 101/BasicsShapeSize
   # - file: 101/WriteChunkedFiles
   # - file: 101/Compression
   # - file: 101/Rechunking
