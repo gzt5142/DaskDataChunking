@@ -7,8 +7,7 @@ chapters:
   - file: 101/WhyChunk
   - file: 101/ExamineDataChunking
   - file: 101/BasicsShapeSize
-  # - file: 101/WriteChunkedFiles
-  # - file: 101/Compression
+  - file: 101/WriteChunkedFiles
   # - file: 101/Rechunking
   # - file: 101/OpenDAP_to_S3
   # - file: 101/SecondaryExample
