@@ -8,9 +8,7 @@ chapters:
   - file: 101/ExamineDataChunking
   - file: 101/BasicsShapeSize
   - file: 101/WriteChunkedFiles
-  # - file: 101/Rechunking
-  # - file: 101/OpenDAP_to_S3
-  # - file: 101/SecondaryExample
+  - file: 101/Rechunking
 - file: 201/index
   # sections:
   # - file: 201/TBD
