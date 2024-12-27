@@ -12,7 +12,7 @@ chapters:
 - file: 201/index
   sections:
   - file: 201/RechunkingwithDask
-  # - file: 201/VirtualZarr
+  - file: 201/VirtualZarr
   - file: 201/AddingCRStoZarr
   # - file: 201/ChunkingAuxilliaryCoords
   # - file: 201/OptimalChunkSelection
