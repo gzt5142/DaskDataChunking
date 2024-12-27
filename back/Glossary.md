@@ -14,6 +14,9 @@ A glossary of common terms used throughout Jupyter Book.
     
 **Chunk size**
     The size of the chunk in terms of memory, which depends on the chunk shape.
+
+**Coordinate Reference System**
+    A framework used to precisely measure locations on the surface of Earth as coordinates.
     
 **Larger-than-memory**
     A dataset whose memory footprint is too large to fit into memory all at once.

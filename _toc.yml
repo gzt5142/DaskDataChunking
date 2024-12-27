@@ -10,12 +10,17 @@ chapters:
   - file: 101/WriteChunkedFiles
   - file: 101/Rechunking
 - file: 201/index
-  # sections:
-  # - file: 201/TBD
+  sections:
+  - file: 201/RechunkingwithDask
+  # - file: 201/VirtualZarr
+  - file: 201/AddingCRStoZarr
+  # - file: 201/ChunkingAuxilliaryCoords
+  # - file: 201/OptimalChunkSelection
+  # - file: 201/IcechunkTutorial
 - file: back/index
   sections:
   # - file: helpers.md
-    # sections:
+  #   sections:
   #   - file: utils
   #   - file: AWS
   #   - file: StartNebariCluster
