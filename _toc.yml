@@ -14,7 +14,6 @@ chapters:
   - file: 201/RechunkingwithDask
   - file: 201/VirtualZarr
   - file: 201/AddingCRStoZarr
-  # - file: 201/ChunkingAuxilliaryCoords
   # - file: 201/OptimalChunkSelection
   # - file: 201/IcechunkTutorial
 - file: back/index
@@ -24,4 +23,5 @@ chapters:
   #   - file: utils
   #   - file: AWS
   #   - file: StartNebariCluster
-  - file: back/Glossary  
+  - file: back/Glossary
+  # - file: back/AdditionalResources
