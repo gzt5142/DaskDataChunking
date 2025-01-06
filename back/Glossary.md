@@ -20,6 +20,9 @@ A glossary of common terms used throughout Jupyter Book.
     
 **Larger-than-memory**
     A dataset whose memory footprint is too large to fit into memory all at once.
+
+**Partial Chunk**
+    The final chunk along a dimensions of a dataset that is not completely full of data due to the chosen chunk shape not being an integer divisor of the dataset's dimensions.
     
 **Rechunking**
     The process of changing the current chunk shape of a dataset to another chunk shape.
