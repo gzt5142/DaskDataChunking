@@ -24,4 +24,4 @@ chapters:
   #   - file: AWS
   #   - file: StartNebariCluster
   - file: back/Glossary
-  # - file: back/AdditionalResources
+  - file: back/AdditionalResources
