@@ -8,7 +8,8 @@ scratch.ipynb
 # The built book -- never check into the repo.
 _build
 
-
+# Temporary files generated from notebooks
+201/virtual_zarr/
 
 # IPython & Jupyter
 profile_default/

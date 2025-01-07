@@ -1,21 +1,10 @@
-# Chunking 101
+# Introduction to Chunking
 
-A gentle introduction to concepts and workflows. 
-
-This introductory chapter will illustrate some key concepts for writing 
-chunked data (in zarr format) to object storage in 'the cloud'.  We'll be
-eventually be writing to an OSN storage device using the S3 API, although
-you could, in theory, write anywhere (including a local file system). 
-
-The illustration dataset will be PRISM(v2), accessed via its OpenDAP 
-endpoint at <https://cida.usgs.gov/thredds/dodsC/prism_v2.html>
-
-
-Buckle up... we will get up to speed fast. 
+In this first series of notebooks, we will go over basic introductory topics associated with chunking.
+As you will soon learn, "chunking" is an an essential part of the data preparation workflow, particularly for large datasets.
+The key concepts you should understand have after this series include:
 
 ```{tableofcontents}
 ```
 
-
-The dask performance report for the total conversion workflow is [here](../performance_reports/OpenDAP_to_S3-perfreport.html)
-
+Buckle up... we will get up to speed fast.
